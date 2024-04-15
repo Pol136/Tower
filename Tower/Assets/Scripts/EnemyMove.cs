@@ -6,12 +6,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
-public abstract class EnemyMove : MonoBehaviour
+public class EnemyMove : MonoBehaviour
 {
     public float speed;
     public float health = 2;
 
-    protected Transform target;
+    private Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public abstract class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveTick();
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     public void TakeDamage(float damage)
@@ -45,6 +45,4 @@ public abstract class EnemyMove : MonoBehaviour
             }
         }
     }
-
-    public virtual void MoveTick(){}
 }
