@@ -9,10 +9,9 @@ using Random = System.Random;
 public class EnemyMove : MonoBehaviour
 {
     public float speed;
-    public float health;
-    public int rubyDropChance;
+    public float health = 2;
 
-    protected Transform target;
+    private Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,7 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyMoveTick();
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     public void TakeDamage(float damage)
@@ -38,14 +37,12 @@ public class EnemyMove : MonoBehaviour
             tower.moneyUpdate();
 
             Random random = new Random();
-            int chance = random.Next(1, 100);
-            if (chance <= rubyDropChance)
+            int chance = random.Next(1, 15);
+            if (chance == 13)
             {
                 tower.ruby += 1;
                 tower.rubyUpdate();
             }
         }
     }
-
-    public virtual void EnemyMoveTick(){}
 }
