@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] private int spawnRate;
 
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject[] enemyPrefab;
 
     [SerializeField] public bool canSpawn = true;
 
@@ -22,8 +23,9 @@ public class EnemySpawn : MonoBehaviour
         while (canSpawn)
         {
             yield return wait;
-
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            Random random = new Random();
+            int enemyType = random.Next(0, enemyPrefab.Length);
+            Instantiate(enemyPrefab[enemyType], transform.position, Quaternion.identity);
         }
     }
 
