@@ -7,10 +7,14 @@ using UnityEngine.UI;
 
 public class SpendMoney : MonoBehaviour
 {
+    [Header("For all")]
     [SerializeField] int[] prices;
     [SerializeField] TextMeshProUGUI priceText;
     [SerializeField] Button btn;
     [SerializeField] GameObject endText;
+
+    [Header("Only for second abilities")]
+    [SerializeField] GameObject[] updates;
 
     private int newPriceIndex=0;
 
@@ -24,7 +28,8 @@ public class SpendMoney : MonoBehaviour
         Tower tower = GameObject.FindGameObjectWithTag("Tower").GetComponent<Tower>();
         int allMoney = tower.money;
 
-        FirstUpgrade upgrade = new FirstUpgrade();
+        FirstUpgrade firstUp = new FirstUpgrade();
+        SecondUpdate secondUp = new SecondUpdate();
 
         bool suc = Int32.TryParse(priceText.text, out int needMoney);
         if (suc)
@@ -32,18 +37,41 @@ public class SpendMoney : MonoBehaviour
             if (allMoney >= needMoney)
             {
                 tower.money -= needMoney;
-                newPriceIndex += 1;
-                if (newPriceIndex < prices.Length)
+                switch (BtnId)
                 {
-                    priceText.text = prices[newPriceIndex].ToString();
-                }
-                else
-                {
-                    btn.gameObject.SetActive(false);
-                    endText.SetActive(true);
-                }
+                    case int n when (n < 5):
+                        newPriceIndex += 1;
+                        if (newPriceIndex < prices.Length)
+                        {
+                            priceText.text = prices[newPriceIndex].ToString();
+                        }
+                        else
+                        {
+                            btn.gameObject.SetActive(false);
+                            endText.SetActive(true);
+                        }
 
-                if (newPriceIndex <= prices.Length) upgrade.Upgrade(BtnId);
+                        if (newPriceIndex <= prices.Length) firstUp.Upgrade(n);
+                        break;
+
+                    case int n when (n < 9):
+                        newPriceIndex += 1;
+                        if (newPriceIndex < prices.Length)
+                        {
+                            priceText.text = prices[newPriceIndex].ToString();
+                            updates[newPriceIndex - 1].SetActive(false);
+                            updates[newPriceIndex].SetActive(true);
+                        }
+                        else
+                        {
+                            btn.gameObject.SetActive(false);
+                            endText.SetActive(true);
+                        }
+
+                        if (newPriceIndex <= prices.Length) secondUp.Upgrade(n, newPriceIndex);
+                        break;
+                }
+                
             }
         }
         tower.moneyUpdate();
