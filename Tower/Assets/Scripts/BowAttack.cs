@@ -9,6 +9,7 @@ public class BowAttack : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
+    [SerializeField] private bool setActive;
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5.4f;
@@ -34,7 +35,7 @@ public class BowAttack : MonoBehaviour
         else
         {
             TimeUntilFire += Time.deltaTime;
-            if (TimeUntilFire >= 1f / bps)
+            if ((TimeUntilFire >= 1f / bps) && (setActive == true))
             {
                 TimeUntilFire = 0f;
                 Shoot();
@@ -70,6 +71,11 @@ public class BowAttack : MonoBehaviour
     {
         Handles.color = Color.cyan;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+    }
+
+    public void SetActive()
+    {
+        setActive = true;
     }
 
 }

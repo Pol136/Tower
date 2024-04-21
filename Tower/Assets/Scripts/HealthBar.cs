@@ -14,6 +14,7 @@ public class HealthBar : MonoBehaviour
     {
         Tower tower = GameObject.FindGameObjectWithTag("Tower").GetComponent<Tower>();
         slider.maxValue = tower.health;
+        helt.text = $"{slider.value}/{slider.maxValue}";
         if ((tower.regeneration > 0) && (slider.value < slider.maxValue)) StartCoroutine("Regeneration");
     }
 
