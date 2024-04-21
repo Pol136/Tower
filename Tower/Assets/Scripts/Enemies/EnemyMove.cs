@@ -10,8 +10,9 @@ public class EnemyMove : MonoBehaviour
 {
     public float speed;
     public float health = 2;
+    public float rubyDropChance;
 
-    private Transform target;
+    protected Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +20,14 @@ public class EnemyMove : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Tower").GetComponent<Transform>();
     }
 
+    protected float getSpeed(){
+        return speed;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        EnemyMoveTick();
     }
 
     public void TakeDamage(float damage)
@@ -37,12 +42,14 @@ public class EnemyMove : MonoBehaviour
             tower.moneyUpdate();
 
             Random random = new Random();
-            int chance = random.Next(1, 15);
-            if (chance == 13)
+            int chance = random.Next(1, 100);
+            if (chance <= rubyDropChance)
             {
                 tower.ruby += 1;
                 tower.rubyUpdate();
             }
         }
     }
+
+    public virtual void EnemyMoveTick(){}
 }
