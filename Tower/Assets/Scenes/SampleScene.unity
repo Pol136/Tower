@@ -2024,6 +2024,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &365086819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365086821}
+  - component: {fileID: 365086820}
+  m_Layer: 0
+  m_Name: SpawnerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &365086820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365086819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0237d9eb36ca5624c86398c58c8f45a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpawnerEventManager: {fileID: 11400000, guid: fba3b03e97c8be341b45a3a82130f059, type: 2}
+  m_Spawners:
+  - {fileID: 1599196593}
+  - {fileID: 638261719}
+  - {fileID: 1259911080}
+  - {fileID: 1596550221}
+  - {fileID: 781824617}
+  m_Waves:
+  - {fileID: 11400000, guid: a6ddc06acc048bc4985750e20e321749, type: 2}
+  - {fileID: 11400000, guid: 77f5f8096d1e90543bb6e1185b9f47f1, type: 2}
+--- !u!4 &365086821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365086819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.7030444, y: -0.35766643, z: -0.2836577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &374573799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,11 +4290,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a38169aece1354d8fabfe628e17d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpawnerEventManager: {fileID: 11400000, guid: fba3b03e97c8be341b45a3a82130f059, type: 2}
   spawnRate: 8
   enemyPrefab:
   - {fileID: 1361753996114679917, guid: 95fdbb32d23a4d845823c0c821bb6ec3, type: 3}
   - {fileID: 1361753996114679917, guid: 08d4dac1f7760f6438014d2285a6fe15, type: 3}
-  canSpawn: 1
+  enemyCount: 000000000000000000000000
+  canSpawn: 0
 --- !u!4 &638261720
 Transform:
   m_ObjectHideFlags: 0
@@ -5651,11 +5707,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a38169aece1354d8fabfe628e17d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpawnerEventManager: {fileID: 11400000, guid: fba3b03e97c8be341b45a3a82130f059, type: 2}
   spawnRate: 10
   enemyPrefab:
   - {fileID: 1361753996114679917, guid: 95fdbb32d23a4d845823c0c821bb6ec3, type: 3}
   - {fileID: 1361753996114679917, guid: 08d4dac1f7760f6438014d2285a6fe15, type: 3}
-  canSpawn: 1
+  enemyCount: 000000000000000000000000
+  canSpawn: 0
 --- !u!1 &785204893
 GameObject:
   m_ObjectHideFlags: 0
@@ -8782,11 +8840,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a38169aece1354d8fabfe628e17d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpawnerEventManager: {fileID: 11400000, guid: fba3b03e97c8be341b45a3a82130f059, type: 2}
   spawnRate: 9
   enemyPrefab:
   - {fileID: 1361753996114679917, guid: 95fdbb32d23a4d845823c0c821bb6ec3, type: 3}
   - {fileID: 1361753996114679917, guid: 08d4dac1f7760f6438014d2285a6fe15, type: 3}
-  canSpawn: 1
+  enemyCount: 000000000000000000000000
+  canSpawn: 0
 --- !u!4 &1259911081
 Transform:
   m_ObjectHideFlags: 0
@@ -12431,11 +12491,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a38169aece1354d8fabfe628e17d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpawnerEventManager: {fileID: 11400000, guid: fba3b03e97c8be341b45a3a82130f059, type: 2}
   spawnRate: 7
   enemyPrefab:
   - {fileID: 1361753996114679917, guid: 95fdbb32d23a4d845823c0c821bb6ec3, type: 3}
   - {fileID: 1361753996114679917, guid: 08d4dac1f7760f6438014d2285a6fe15, type: 3}
-  canSpawn: 1
+  enemyCount: 000000000000000000000000
+  canSpawn: 0
 --- !u!1 &1599196592
 GameObject:
   m_ObjectHideFlags: 0
@@ -12465,11 +12527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a38169aece1354d8fabfe628e17d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpawnerEventManager: {fileID: 11400000, guid: fba3b03e97c8be341b45a3a82130f059, type: 2}
   spawnRate: 7
   enemyPrefab:
   - {fileID: 1361753996114679917, guid: 95fdbb32d23a4d845823c0c821bb6ec3, type: 3}
   - {fileID: 1361753996114679917, guid: 08d4dac1f7760f6438014d2285a6fe15, type: 3}
-  canSpawn: 1
+  enemyCount: 000000000000000000000000
+  canSpawn: 0
 --- !u!4 &1599196594
 Transform:
   m_ObjectHideFlags: 0
