@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "WaveFile")]
 public class Wave : ScriptableObject
 {
+    public string waveName;
     public int[] enemyCounts;
 }

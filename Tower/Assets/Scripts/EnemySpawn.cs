@@ -19,25 +19,20 @@ public class EnemySpawn : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Spawner());
-        Debug.Log("0");
     }
 
     private IEnumerator Spawner ()
     {
         WaitForSeconds wait = new WaitForSeconds(spawnRate);
-        Debug.Log("d");
         Debug.Log(canSpawn);
         for(;;){
             if (canSpawn)
             {
-                Debug.Log("a");
                 Random random = new Random();
                 enemyType = random.Next(0, enemyPrefab.Length);
                 while (enemyCount[enemyType] == 0){
                     enemyType = random.Next(0, enemyPrefab.Length);
-                    Debug.Log("b");
                 }
-                Debug.Log("c");
                 Instantiate(enemyPrefab[enemyType], transform.position, Quaternion.identity);
                 enemyCount[enemyType]--;
 

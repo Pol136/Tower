@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f3450a789d4c2842ba86d12a26f45c1, type: 3}
-  m_Name: Wave 2
+  m_Name: Wave 4
   m_EditorClassIdentifier: 
-  waveName: "\u0412\u043E\u043B\u043D\u0430 2"
-  enemyCounts: 010000000300000001000000
+  waveName: "\u0412\u043E\u043B\u043D\u0430 4"
+  enemyCounts: 040000000400000004000000

@@ -2063,6 +2063,10 @@ MonoBehaviour:
   m_Waves:
   - {fileID: 11400000, guid: a6ddc06acc048bc4985750e20e321749, type: 2}
   - {fileID: 11400000, guid: 77f5f8096d1e90543bb6e1185b9f47f1, type: 2}
+  - {fileID: 11400000, guid: df0c7581f02781341be1f856ed1b92a8, type: 2}
+  - {fileID: 11400000, guid: 1eb87ede9ffaaf64298e6ee044202008, type: 2}
+  - {fileID: 11400000, guid: 3d537cf58a2785d4e9b36e18b3e68680, type: 2}
+  m_WaveText: {fileID: 1495106919}
 --- !u!4 &365086821
 Transform:
   m_ObjectHideFlags: 0

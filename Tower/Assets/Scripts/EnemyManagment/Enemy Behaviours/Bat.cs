@@ -20,7 +20,7 @@ public class Bat : EnemyMove
         if (radius < 0){
             radius = 0;
         }
-        transform.position = Vector2.Lerp(transform.position, new Vector2(Mathf.Cos(1f * t) * radius + target.position.x, Mathf.Sin(1f * t) * radius + target.position.y), Time.deltaTime);
+        transform.position = Vector2.Lerp(transform.position, new Vector2(Mathf.Cos(1f * t + spawnpoint.x) * radius + target.position.x, Mathf.Sin(1f * t + spawnpoint.y) * radius + target.position.y), Time.deltaTime);
         //transform.position = Vector2.MoveTowards(transform.position, (transform.position - target.position) * 0.01f, getSpeed() * Time.deltaTime);
     }
 
