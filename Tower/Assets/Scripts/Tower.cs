@@ -9,8 +9,8 @@ public class Tower : MonoBehaviour
     [SerializeField] public float speed { set;  get; } = 1f;
     [SerializeField] public int health { set; get; } = 16;
     [SerializeField] public float regeneration { set;  get; } = 0;
-    [SerializeField] public int moneyForKill { get; set; } = 3;//это сколько начисляется за убийство
-    [SerializeField] public int money { set; get; } = 5;//это суммарное количество монет
+    [SerializeField] public int moneyForKill { get; set; } = 3;//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    [SerializeField] public int money = 5;//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     [SerializeField] public int ruby { get; set; } = 0;
 
     public TextMeshProUGUI DamageTower;

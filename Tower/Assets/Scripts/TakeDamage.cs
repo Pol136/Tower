@@ -7,9 +7,12 @@ public class TakeDamage : MonoBehaviour
     public HealthBar bar;
     public int damage;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        bar.MinusHealth(damage);
-        Destroy(collision.gameObject);
+        if (col.gameObject.tag == "Enemy")
+        {
+            bar.MinusHealth(damage);
+            Destroy(col.gameObject);
+        }
     }
 }

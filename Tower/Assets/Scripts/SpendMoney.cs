@@ -54,7 +54,7 @@ public class SpendMoney : MonoBehaviour
                         if (newPriceIndex <= prices.Length) firstUp.Upgrade(n);
                         break;
 
-                    case int n when (n < 9):
+                    case int n when ((n>=5) && (n < 9)):
                         newPriceIndex += 1;
                         if (newPriceIndex < prices.Length)
                         {
