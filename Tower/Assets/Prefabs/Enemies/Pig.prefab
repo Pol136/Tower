@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 3207169477010690145}
   m_Layer: 6
   m_Name: Pig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  health: 2
+  health: 6.79
   rubyDropChance: 0
 --- !u!61 &1361753996114679919
 BoxCollider2D:
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02267313, y: 0.017005086}
+  m_Offset: {x: 0.0057942867, y: -0.016206205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -160,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4081202, y: 0.8299501}
+  m_Size: {x: 2.8504415, y: 2.7182536}
   m_EdgeRadius: 0
 --- !u!50 &1361753996114679916
 Rigidbody2D:
@@ -170,11 +170,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361753996114679917}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 70
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
