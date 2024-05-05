@@ -7,10 +7,9 @@ public class BowAttack : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private LayerMask enemyMask;
-    [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private bool setActive;
-    [SerializeField] private bool secondTarget;
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5.4f;
@@ -57,14 +56,9 @@ public class BowAttack : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange,
             (Vector2)transform.position, 0f, enemyMask);
 
-        if (hits.Length == 1)
+        if (hits.Length > 0)
         {
             target = hits[0].transform;
-        }
-        else if (hits.Length > 1)
-        {
-            if (secondTarget) target = hits[1].transform;
-            else target = hits[0].transform;
         }
     }
 
@@ -79,9 +73,9 @@ public class BowAttack : MonoBehaviour
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
 
-    public void SetActive(bool val)
+    public void SetActive()
     {
-        setActive = val;
+        setActive = true;
     }
 
 }

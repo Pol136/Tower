@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float strenght, time = 1f;
 
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 5f;
-    public bool setKnockback;
     private float damage;
 
     private Transform target;
@@ -40,26 +37,10 @@ public class Bullet : MonoBehaviour
         rb.velocity = direction * bulletSpeed;
     }
 
-    private IEnumerator Reset(Rigidbody2D enemy)
-    {
-        if (enemy != null)
-        {
-            yield return new WaitForSeconds(time);
-            enemy.velocity = Vector2.zero;
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
-    {   
-        
+    {
         other.gameObject.GetComponent<EnemyMove>().TakeDamage(damage);
-        if (setKnockback)
-        {
-            Vector2 direction = (other.transform.position - transform.position).normalized;
-            other.rigidbody.AddForce(direction * strenght, ForceMode2D.Impulse);
-            StartCoroutine(Reset(other.rigidbody));
-        }
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     IEnumerator DestroyAfterSeconds()

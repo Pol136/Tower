@@ -98,10 +98,9 @@ GameObject:
   - component: {fileID: 1361753996114679916}
   - component: {fileID: 2081569889699372177}
   - component: {fileID: 3207169477010690145}
-  - component: {fileID: 2872531407848473135}
   m_Layer: 6
   m_Name: Bat
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +149,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022672176, y: 0.3316145}
+  m_Offset: {x: -0.02267313, y: 0.017005086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -161,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.1834326, y: 2.4789376}
+  m_Size: {x: 1.4081202, y: 0.8299501}
   m_EdgeRadius: 0
 --- !u!50 &1361753996114679916
 Rigidbody2D:
@@ -220,18 +219,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2872531407848473135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361753996114679917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74754ffb69120054c84f7738aacb1e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1361753996114679916}
-  strenght: 15
-  delay: 0.15

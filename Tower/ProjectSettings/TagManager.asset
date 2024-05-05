@@ -8,13 +8,6 @@ TagManager:
   - Coin
   - Damage
   - SecondBow
-  - StartPoint
-  - Enemy
-  - Boloto
-  - Bullet
-  - MolotTargetArea
-  - FireballFirst
-  - FireballSecond
   layers:
   - Default
   - TransparentFX
