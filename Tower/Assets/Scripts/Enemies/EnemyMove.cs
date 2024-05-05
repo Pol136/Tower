@@ -1,15 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
-public class Pig : EnemyMove
+public class EnemyMove : MonoBehaviour
 {
-    public override void EnemyMoveTick (){
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    public float speed;
+    public float health = 2;
+    public float rubyDropChance;
+
+    protected Transform target;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Tower").GetComponent<Transform>();
     }
 
-    public override void TakeDamage(float damage)
+    protected float getSpeed(){
+        return speed;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        EnemyMoveTick();
+    }
+
+    public void TakeDamage(float damage)
     {
         health -= damage;
         
@@ -29,4 +50,6 @@ public class Pig : EnemyMove
             }
         }
     }
+
+    public virtual void EnemyMoveTick(){}
 }
