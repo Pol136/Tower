@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    [SerializeField] private Bullet bulletPrefabe;
+
     [SerializeField] public float damage { set;  get; } = 2;
     [SerializeField] public float speed { set;  get; } = 1f;
     [SerializeField] public int health { set; get; } = 16;
@@ -31,6 +33,8 @@ public class Tower : MonoBehaviour
         moneyForKillUpdate();
         moneyUpdate();
         rubyUpdate();
+
+        bulletPrefabe.setKnockback = false;
     }
 
     public void damageUpdate()

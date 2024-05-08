@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 5f;
-    public bool setKnockback;
+    public bool setKnockback = false;
     private float damage;
 
     private Transform target;
