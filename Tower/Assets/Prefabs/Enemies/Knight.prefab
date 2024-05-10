@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361753995597099682}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 574fc6e0a0eaf234182edb34e900f115, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b8d2c4bbe7591d49855c25f10306745, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -158,10 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2ce05a7ec789e45bdf35414431d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  health: 6
+  speed: 3
+  health: 3
   rubyDropChance: 0
-  shieldHits: 3
+  animator: {fileID: 3207169477010690145}
+  shieldHits: 4
 --- !u!50 &1361753996114679916
 Rigidbody2D:
   serializedVersion: 4
@@ -191,9 +192,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361753996114679917}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5f8dbdd0a23e9248be1a4e2a3f2cc7a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6fdbbb4ed803f104f98333ec56d154f7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

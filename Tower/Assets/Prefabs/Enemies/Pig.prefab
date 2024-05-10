@@ -182,6 +182,7 @@ MonoBehaviour:
   speed: 1
   health: 10
   rubyDropChance: 5
+  animator: {fileID: 3207169477010690145}
 --- !u!95 &3207169477010690145
 Animator:
   serializedVersion: 5

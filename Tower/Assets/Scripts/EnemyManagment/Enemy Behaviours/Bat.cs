@@ -14,7 +14,7 @@ public class Bat : EnemyMove
         spawnpoint = new Vector2(transform.position.x, transform.position. y);
     }
     public override void EnemyMoveTick (){
-        t += Time.deltaTime / 10;
+        t += Time.fixedDeltaTime / 10;
         //radius -= getSpeed() * t;
         radius -= 0.01f;
         if (radius < 0){

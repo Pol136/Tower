@@ -5,8 +5,10 @@ using Random = System.Random;
 
 public class Knight : EnemyMove
 {
+    [SerializeField] Animator animator;
     public int shieldHits;
     public override void EnemyMoveTick (){
+        if (transform.position.x > -2.41f) animator.SetBool("IsOnTheRight", true);
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
@@ -18,6 +20,7 @@ public class Knight : EnemyMove
 
         } else {
             
+            animator.SetBool("IsShielded", false);
             health -= damage;
         
             if (health <= 0)

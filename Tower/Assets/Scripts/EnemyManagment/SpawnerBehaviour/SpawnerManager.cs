@@ -10,6 +10,7 @@ public class SpawnerManager : MonoBehaviour
     [SerializeField] EnemySpawn[] m_Spawners;
     [SerializeField] Wave[] m_Waves;
     [SerializeField] TextMeshProUGUI m_WaveText;
+    [SerializeField] GameObject winPanel;
     int waveNumber = 0;
     bool needToReload = true; 
     public void Update(){
@@ -20,10 +21,21 @@ public class SpawnerManager : MonoBehaviour
             }
         }
         if (needToReload){
-            m_SpawnerEventManager.LoadNextWave(m_Waves[waveNumber]);
-            m_WaveText.text = m_Waves[waveNumber].waveName;
-            waveNumber++;
-            needToReload = false;
+            if (waveNumber + 1 == m_Waves.Length) {
+                winPanel.SetActive(true);
+            } else {
+                Timer(15.0f);
+                m_SpawnerEventManager.LoadNextWave(m_Waves[waveNumber]);
+                m_WaveText.text = m_Waves[waveNumber].waveName;
+                waveNumber++;
+                needToReload = false;
+            }
+        }
+    }
+
+    public void Timer(float time){
+        while (time > 0){
+            time = time - Time.fixedDeltaTime;
         }
     }
 }
