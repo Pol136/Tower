@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class BolotoScript : MonoBehaviour
 {
     public bool setActive, setDamage;
-    public GameObject bolotoImage;
+    //public GameObject bolotoImage;
 
-    void Awake()
+    /*void Awake()
     {
         bolotoImage.SetActive(true);
-    }
+    }*/
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -22,8 +22,8 @@ public class BolotoScript : MonoBehaviour
                 EnemyMove enemy = col.gameObject.GetComponent<EnemyMove>();
                 //enemy.speed -= 0.8f;
                 //enemy.speed *= 0f;
-                Debug.Log(enemy.speed);
-                enemy.SetSpeed(0f);
+                //Debug.Log(enemy.speed);
+                enemy.SetSpeed(0.5f);
                 if (setDamage) enemy.TakeDamage(1);
             }
             

@@ -66,6 +66,7 @@ public class SecondUpdate
             case 8:
                 if (numberUpdate == 1)
                 {
+                    bolotP.bolotoImage1.SetActive(true);
                     bolotP.boloto1.SetActive(true);
                     bolotP.boloto1.GetComponent<BolotoScript>().setActive = true;
                 }
@@ -75,6 +76,8 @@ public class SecondUpdate
                 }
                 else
                 {
+                    bolotP.bolotoImage1.SetActive(false);
+                    bolotP.bolotoImage2.SetActive(true);
                     bolotP.boloto1.gameObject.SetActive(false);
                     bolotP.boloto2.gameObject.SetActive(true);
                     bolotP.boloto2.GetComponent<BolotoScript>().setActive = true;

@@ -14,10 +14,12 @@ public class Pig : EnemyMove
     public override void TakeDamage(float damage)
     {
         health -= damage;
-        
+        AudioManager.Instance.PlaySFX("Damage");
+
         if (health <= 0)
         {   
             Destroy(gameObject);
+            AudioManager.Instance.PlaySFX("Died");
             Tower tower = GameObject.FindGameObjectWithTag("Tower").GetComponent<Tower>();
             tower.money = tower.money + tower.moneyForKill;
             tower.moneyUpdate();
@@ -29,6 +31,10 @@ public class Pig : EnemyMove
                 tower.ruby += 1;
                 tower.rubyUpdate();
             }
+        }
+        else
+        {
+            AudioManager.Instance.PlaySFX("Damage");
         }
     }
 }

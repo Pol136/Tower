@@ -37,6 +37,7 @@ public class SpendMoney : MonoBehaviour
             if (allMoney >= needMoney)
             {
                 tower.money -= needMoney;
+                AudioManager.Instance.PlaySFX("Upgrade");
                 switch (BtnId)
                 {
                     case int n when (n < 5):

@@ -31,6 +31,7 @@ public class Bat : EnemyMove
         if (health <= 0)
         {   
             Destroy(gameObject);
+            AudioManager.Instance.PlaySFX("Died");
             Tower tower = GameObject.FindGameObjectWithTag("Tower").GetComponent<Tower>();
             tower.money = tower.money + tower.moneyForKill;
             tower.moneyUpdate();
@@ -42,6 +43,10 @@ public class Bat : EnemyMove
                 tower.ruby += 1;
                 tower.rubyUpdate();
             }
+        }
+        else
+        {
+            AudioManager.Instance.PlaySFX("Damage");
         }
     }
 }

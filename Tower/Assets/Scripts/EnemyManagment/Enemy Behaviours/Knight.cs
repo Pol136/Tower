@@ -17,6 +17,7 @@ public class Knight : EnemyMove
         if (shieldHits > 0){
 
             shieldHits--;
+            AudioManager.Instance.PlaySFX("Damage");
 
         } else {
             
@@ -26,6 +27,7 @@ public class Knight : EnemyMove
             if (health <= 0)
             {   
                 Destroy(gameObject);
+                AudioManager.Instance.PlaySFX("Died");
                 Tower tower = GameObject.FindGameObjectWithTag("Tower").GetComponent<Tower>();
                 tower.money = tower.money + tower.moneyForKill;
                 tower.moneyUpdate();
@@ -37,7 +39,11 @@ public class Knight : EnemyMove
                     tower.ruby += 1;
                     tower.rubyUpdate();
                 }
-            }  
+            }
+            else
+            {
+                AudioManager.Instance.PlaySFX("Damage");
+            }
         }
     }
 }
