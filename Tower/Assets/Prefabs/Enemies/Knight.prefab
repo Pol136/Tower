@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2ce05a7ec789e45bdf35414431d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  health: 3
+  speed: 1
+  health: 1
   rubyDropChance: 0
   animator: {fileID: 3207169477010690145}
   shieldHits: 4

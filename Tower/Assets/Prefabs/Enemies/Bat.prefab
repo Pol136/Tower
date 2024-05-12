@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  health: 1
+  health: 2
   rubyDropChance: 0
 --- !u!95 &3207169477010690145
 Animator:
