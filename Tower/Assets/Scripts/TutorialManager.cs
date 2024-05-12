@@ -18,16 +18,27 @@ public class TutorialManager : MonoBehaviour
     {
         if (znach.Need == 0)
         {
+            Time.timeScale = 0;
             for (int i = 0; i < PopUps.Length; i++)
             {
                 if (i == index)
                 {
                     PopUps[i].SetActive(true);
                 }
-                else
-                {
-                    PopUps[i].SetActive(false);
-                }
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                PopUps[index].SetActive(false);
+                index++;
+                Debug.Log(index);
+            }
+
+            if (index == PopUps.Length)
+            {
+                Time.timeScale = 1;
+                znach.Need = 1;
+                File.WriteAllText(Application.streamingAssetsPath + "/need.json", JsonUtility.ToJson(znach));
             }
         }
         
