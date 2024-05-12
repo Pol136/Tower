@@ -36,7 +36,9 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         if (!target) return;
-        Vector2 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (target.position - transform.position).normalized;
+        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ+180f);
         rb.velocity = direction * bulletSpeed;
     }
 

@@ -11,10 +11,12 @@ public class BowAttack : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private bool setActive;
     [SerializeField] private bool secondTarget;
+    [SerializeField] public GameObject Luchnick;
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5.4f;
     private float bps=1f;
+    private float rotZ;
 
     private Transform target;
     private float TimeUntilFire;
@@ -64,8 +66,14 @@ public class BowAttack : MonoBehaviour
         }
         else if (hits.Length > 1)
         {
-            if (secondTarget) target = hits[1].transform;
-            else target = hits[0].transform;
+            if (secondTarget)
+            {
+                target = hits[1].transform;
+            }
+            else
+            {
+                target = hits[0].transform;
+            }
         }
     }
 

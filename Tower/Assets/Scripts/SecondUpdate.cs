@@ -20,6 +20,7 @@ public class SecondUpdate
                 if (numberUpdate == 1)
                 {
                     bowPoint.SetActive(true);
+                    bowPoint.Luchnick.SetActive(true);
                     tower.damage += 1;
                     tower.speed += 0.1f;
                 }
@@ -67,6 +68,7 @@ public class SecondUpdate
                 if (numberUpdate == 1)
                 {
                     bolotP.bolotoImage1.SetActive(true);
+                    bolotP.bolotoImageimg.SetActive(true);
                     bolotP.boloto1.SetActive(true);
                     bolotP.boloto1.GetComponent<BolotoScript>().setActive = true;
                 }
